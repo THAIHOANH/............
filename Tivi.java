@@ -1,15 +1,17 @@
+import java.io.Serializable;
 import java.util.Scanner;
 /**
  *
  * @author thaih
  */
-public class Tivi {
+public class Tivi implements Serializable{
     private String mativi;
     private String tentivi;
     private String hangsanxuat;
     private double dongia;
     private int soluong;
-    
+    public Tivi(){
+}
     public Tivi (String mativi, String tentivi, String hangsanxuat,double dongia, int soluong ){
         this.mativi = mativi;
         this.tentivi = tentivi;
@@ -47,25 +49,27 @@ public class Tivi {
     public void setsoluong(int soluong){
         this.soluong = soluong;
     }
+
+   
     public void nhap (){
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhap Ma Tivi:");
-        mativi = scanner.next();
-        System.out.println("Nhap Ten Tivi:");
-        tentivi = scanner.next();
-        System.out.println("Nhap Hang San Xuat:");
-        hangsanxuat = scanner.next();
-        System.out.println("Nhap Don Gia:");
+        System.out.println("Nhap ma Tivi:");
+        mativi = scanner.nextLine();
+        System.out.println("Nhap ten Tivi:");
+        tentivi = scanner.nextLine();
+        System.out.println("Nhap hang san xuat:");
+        hangsanxuat = scanner.nextLine();
+        System.out.println("Nhap don gia:");
         dongia = scanner.nextDouble();
-        System.out.println("Nhap So Luong:");
+        System.out.println("Nhap so luong:");
         soluong = scanner.nextInt();
     }
     public void hien(){
-        System.out.println("ma Tivi la:"+ mativi);
-        System.out.println("Ten Tivi la:"+ tentivi);
-        System.out.println("Hang san xuat la:"+ hangsanxuat);
-        System.out.println("don gia la:"+ dongia);
-        System.out.println("so luong la:"+ soluong);
+        System.out.println("mã Tivi:"+ mativi);
+        System.out.println("Tên Tivi:"+ tentivi);
+        System.out.println("Hãng sản xuất:"+ hangsanxuat);
+        System.out.println("Đơn giá:"+ dongia);
+        System.out.println("số lượng:"+ soluong);
         
     }
     
